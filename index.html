@@ -39,29 +39,150 @@
   </script>
 
   <style>
-    :root{--bg:#0b1220;--card:#121a2b;--muted:#7a87a2;--text:#e9eefc;--accent:#8ab4ff;--chip:#1b2640;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px}
+    :root{
+      --bg:#0b1220;
+      --card:#121a2b;
+      --muted:#7a87a2;
+      --text:#e9eefc;
+      --accent:#8ab4ff;
+      --chip:#1b2640;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+    }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif}
-    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    html,body{
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--text);
+      font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
     .wrap{max-width:1040px;margin:0 auto;padding:28px}
-    .topbar{display:flex;justify-content:space-between;align-items:center;margin:8px 0 22px}
-    .badge{display:inline-flex;align-items:center;gap:8px;background:var(--chip);border:1px solid #23304a;border-radius:999px;padding:6px 12px;color:#b7c5e6;font-size:13px}
-    .lang{gap:10px;display:flex;align-items:center}
-    .lang button{background:var(--chip);color:var(--text);border:1px solid #23304a;padding:7px 12px;border-radius:999px;cursor:pointer}
-    .lang button[aria-pressed="true"]{background:var(--accent);color:#0b1422;border-color:transparent}
-    .card{background:var(--card);border:1px solid #23304a;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
-    .hero h1{margin:0 0 8px;font-size:46px;letter-spacing:.5px}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 6px}
-    .btn{display:inline-flex;align-items:center;gap:8px;background:#1a2a47;color:#fff;border:1px solid #26385e;padding:12px 16px;border-radius:999px;cursor:pointer;text-decoration:none}
-    .btn.primary{background:var(--accent);color:#0b1422;border-color:transparent}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-    .col-6{grid-column:span 6}.col-12{grid-column:span 12}
-    .chip{display:inline-block;background:var(--chip);border:1px solid #23304a;border-radius:999px;padding:6px 10px;font-size:13px;color:#b7c5e6}
-    .list{display:grid;gap:10px;margin:8px 0}
-    .muted{color:var(--muted)} .foot{opacity:.8;font-size:13px;margin-top:24px}
-    img.logo{max-width:260px;height:auto;display:block;margin:8px 0 6px;opacity:.95;border-radius:12px}
-    @media (max-width:860px){.col-6{grid-column:span 12}.hero h1{font-size:36px}}
-    .ico{width:16px;height:16px;display:inline-block;vertical-align:middle}
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin:8px 0 22px
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:var(--chip);
+      border:1px solid #23304a;
+      border-radius:999px;
+      padding:6px 12px;
+      color:#b7c5e6;
+      font-size:13px
+    }
+    .lang{
+      gap:10px;
+      display:flex;
+      align-items:center
+    }
+    .lang button{
+      background:var(--chip);
+      color:var(--text);
+      border:1px solid #23304a;
+      padding:7px 12px;
+      border-radius:999px;
+      cursor:pointer
+    }
+    .lang button[aria-pressed="true"]{
+      background:var(--accent);
+      color:#0b1422;
+      border-color:transparent
+    }
+    .card{
+      background:var(--card);
+      border:1px solid #23304a;
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:var(--shadow)
+    }
+    .hero h1{
+      margin:0 0 8px;
+      font-size:46px;
+      letter-spacing:.5px
+    }
+    .cta{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:18px 0 6px
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#1a2a47;
+      color:#fff;
+      border:1px solid #26385e;
+      padding:12px 16px;
+      border-radius:999px;
+      cursor:pointer;
+      text-decoration:none;
+      font-size:14px
+    }
+    .btn.primary{
+      background:var(--accent);
+      color:#0b1422;
+      border-color:transparent
+    }
+    /* Nouveau style pour rendre “Concept Note” bien lisible comme bouton */
+    .btn.secondary{
+      background:transparent;
+      color:var(--accent);
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(138,180,255,.35);
+    }
+    .btn.secondary:hover{
+      background:rgba(138,180,255,.14);
+      text-decoration:none;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:18px
+    }
+    .col-6{grid-column:span 6}
+    .col-12{grid-column:span 12}
+    .chip{
+      display:inline-block;
+      background:var(--chip);
+      border:1px solid #23304a;
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:13px;
+      color:#b7c5e6
+    }
+    .list{
+      display:grid;
+      gap:10px;
+      margin:8px 0
+    }
+    .muted{color:var(--muted)}
+    .foot{opacity:.8;font-size:13px;margin-top:24px}
+    img.logo{
+      max-width:260px;
+      height:auto;
+      display:block;
+      margin:8px 0 6px;
+      opacity:.95;
+      border-radius:12px
+    }
+    @media (max-width:860px){
+      .col-6{grid-column:span 12}
+      .hero h1{font-size:36px}
+    }
+    .ico{
+      width:16px;
+      height:16px;
+      display:inline-block;
+      vertical-align:middle
+    }
   </style>
 </head>
 <body>
@@ -181,6 +302,10 @@
       <div class="cta">
         <a class="btn primary" href="mailto:contact@bciaccess.com?subject=BCIaccess.com%20-%20NDA%20%2F%20Offer&body=Hello%2C%0D%0A%0D%0AI%27d%20like%20to%20request%20your%20NDA%20and%2For%20submit%20an%20offer%20for%20BCIaccess.com.%0D%0ACompany%3A%20%0D%0AName%20%2F%20Role%3A%20%0D%0AIntended%20use%3A%20%0D%0ABudget%20range%3A%20%0D%0ABest%2C">
           Submit an offer / Request NDA
+        </a>
+        <!-- NOUVEAU : bouton Concept Note bien visible, EN uniquement -->
+        <a class="btn secondary" href="/concept-note.html">
+          📘 Concept Note
         </a>
         <a class="btn" href="#value-en">Why this name?</a>
         <a class="btn" href="https://www.linkedin.com/company/bciaccess" target="_blank" rel="noopener" aria-label="Open BCIaccess on LinkedIn">
